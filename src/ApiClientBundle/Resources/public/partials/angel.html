@@ -1,0 +1,13 @@
+<div ng-controller="angelController">
+	<div class="angels-list">
+       	<h3>{{angel.name}}'s Quotes</h3> 
+       	<div class="angel-quote">
+	       	<ul>	
+	       		<li class="blockquote" ng-repeat="quote in angel.quotes | orderBy:'-id' ">
+				    <p class="quote-text">{{quote.text}}</p>
+				    <p class="quote-date"><em>by {{angel.name}} - posted at {{quote.createdAt.date | limitTo:10}}</em></p>
+	       		</li>
+	       	</ul>
+       	</div>
+    </div>
+</div>

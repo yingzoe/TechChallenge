@@ -1,0 +1,18 @@
+{
+  "name": "smartangels",
+  "authors": [
+    "yingzoe <yingevita@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "angularjs#^1.5.3",
+    "angular-route": "^1.5.3"
+  }
+}

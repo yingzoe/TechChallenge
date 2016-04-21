@@ -1,0 +1,4 @@
+services:
+#    api_client.example:
+#        class: ApiClientBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

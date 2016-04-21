@@ -1,0 +1,27 @@
+<div ng-controller="homeController as homeCtrl">
+	<form name="quoteForm" id="quote-post" ng-submit="homeCtrl.postQuote(selectAngel)">
+	    <h3>Post a quote!</h3>
+        <fieldset class="form-group">
+            <textarea class="form-control" placeholder="Write the quote..." ng-model="newQuote.text" title="quoteText"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+		    <select class="form-control" name="mySelect" ng-options="angel.name for angel in angels track by angel.id" ng-model="selectAngel">
+		    	<option value>Who said that</option>
+		    </select>
+        </fieldset>
+        <fieldset class="form-group">
+		    <input type="submit" class="btn btn-primary pull-right" value="Submit Quote" />
+		</fieldset>   
+	</form>
+	<div class="quotes-list">
+       	<h3>All the Quotes</h3>
+       	<div class="angel-quote">
+	       	<ul>	
+	       		<li class="blockquote" ng-repeat="quote in quotes | orderBy:'-id' ">
+				    <p class="quote-text">{{quote.text}}</p>
+				    <p class="quote-date"><em>by {{quote.angelName}} - posted at {{quote.createdAt.date | limitTo:10}}</em></p>
+	       		</li>
+	       	</ul>
+       	</div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+<head>
+    <meta charset="utf-8">
+    <title>Smartangels</title>
+
+    {% stylesheets filter="scssphp" output="css/app.css"
+        "@ApiClientBundle/Resources/public/scss/style.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    <script>
+        var root_path = "{{ asset('', null, true) }}";
+        var assets_path = root_path + "bundles/apiclient/partials";
+    </script>
+</head>
+
+<body ng-app="ApiClient">
+    <header>
+        <div id="navbar">
+            <div id="home"><a href="#/">Home</a></div>
+            <div id="angels"><a href="#/angels">Angels</a></div>
+            <div id="notifications" class="dropdown">
+                <a>Notifications</a>
+                <div class="dropdown-content"><p>Empty.</p></div>
+            </div>
+        </div>
+    </header>
+
+    <div ng-view class="container" ng-controller="mainController">
+        <!-- ANGULAR CONTENT GOES HERE -->
+    </div>
+
+    {% javascripts output='js/client'
+        "@ApiClientBundle/Resources/public/bower_components/angular/angular.js"
+        "@ApiClientBundle/Resources/public/bower_components/angular-route/angular-route.js"
+        "@ApiClientBundle/Resources/public/js/app.js"
+        "@ApiClientBundle/Resources/public/js/route.js"
+    %}
+
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+
+    {% endjavascripts %}
+
+</body>
+
+</html>
